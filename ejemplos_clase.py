@@ -112,8 +112,7 @@ def update_persona_age(name, age):
     conn = sqlite3.connect('personas.db')
     c = conn.cursor()
 
-    rowcount = c.execute("UPDATE persona SET age =? WHERE name =?",
-                         (age, name)).rowcount
+    rowcount = c.execute("UPDATE persona SET age =? WHERE name =?",(age, name)).rowcount
 
     print('Filas actualizadas:', rowcount)
 
