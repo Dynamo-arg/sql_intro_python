@@ -101,7 +101,7 @@ def update_titulo(id, title):
     conn = sqlite3.connect('libreria.db')
     c = conn.cursor()
 
-    rowcount = c.execute("UPDATE libros SET title =? WHERE id =?",(title, str(id))).rowcount
+    rowcount = c.execute("UPDATE libros SET title =? WHERE id =?",(title, id)).rowcount
 
     if rowcount == 0:
         print("Libro no encontrado")
